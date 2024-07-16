@@ -1,23 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 15.07.2024 17:35:16
-// Design Name: 
-// Module Name: lfsr_tb
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: Test bench for 4-bit LFSR module
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 module lfsr_tb;
    
