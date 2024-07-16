@@ -1,23 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 12.07.2024 22:03:11
-// Design Name: 
-// Module Name: Ddice
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 module Ddice(
     input clk, rst, rb,
@@ -36,7 +17,6 @@ module Ddice(
     parameter s4 = 3'b100;
     parameter s5 = 3'b101;
 
-    // Initial block for setting initial values
     initial begin
         win = 0;
         lose = 0;
@@ -46,9 +26,7 @@ module Ddice(
         prev_sum = 0;
     end
 
-    // Combinational logic block
     always @* begin
-        // Default values to prevent latches
         win = 0;
         lose = 0;
         roll = 0;
@@ -68,10 +46,8 @@ module Ddice(
                 if (rb == 1) begin
                     roll = 1;
                     if (sum == 3 || sum == 6 || sum == 9) begin
-                       
                         next_state = s2;
                     end else if (sum == 2 || sum == 8 || sum == 11) begin
-                        
                         next_state = s3;
                     end else begin
                         next_state = s4;
@@ -112,7 +88,6 @@ module Ddice(
         endcase
     end
 
-    // Sequential logic block
     always @(posedge clk or posedge rst) begin
         if (rst)
             state <= s0;
